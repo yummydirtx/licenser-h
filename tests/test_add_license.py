@@ -6,6 +6,7 @@ import sys
 from unittest.mock import patch, MagicMock
 from contextlib import contextmanager
 from src.add_license import *
+from src.main import main
 
 
 class TestAddLicenseScript(unittest.TestCase):

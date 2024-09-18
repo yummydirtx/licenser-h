@@ -76,16 +76,3 @@ def create_license_file(project_path):
     license_file_path = os.path.join(project_path, 'LICENSE')
     with open(license_file_path, 'w', encoding='utf-8') as f:
         f.write(license_text_full)
-
-def main():
-    if len(sys.argv) != 2:
-        print("Usage: python add_license.py /path/to/project")
-        sys.exit(1)
-
-    project_path = sys.argv[1]
-    process_project_directory(project_path)
-    create_license_file(project_path)
-    print("License headers added and LICENSE file created.")
-
-if __name__ == '__main__':
-    main()
