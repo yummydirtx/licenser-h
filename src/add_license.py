@@ -11,16 +11,6 @@ Permission is hereby granted, free of charge, to any person obtaining a copy...
 [rest of the MIT License text]
 """.strip()
 
-# Define the license header for source files
-license_header = """
-MIT License
-
-© [Year] [Your Name]
-
-Permission is hereby granted...
-[shortened header if needed]
-""".strip()
-
 # Mapping of file extensions to their comment styles
 comment_styles = {
     '.py': '#',           # Python
@@ -60,7 +50,7 @@ def add_license_header(file_path, comment_style, license_lines):
     with open(file_path, 'w', encoding='utf-8') as f:
         f.writelines(license_header + ['\n'] + content)
 
-def process_project_directory(project_path):
+def process_project_directory(project_path, license_header):
     license_lines = license_header.strip().split('\n')
 
     for root, dirs, files in os.walk(project_path):
