@@ -16,7 +16,7 @@ def main():
     if args.interactive:
         license_type = choose_license()
     else:
-        parser.add_argument('--license', '-l', choices=['mit', 'apache2', 'gpl3'], default='mit',
+        parser.add_argument('--license', '-l', choices=['mit', 'apache2', 'gpl3', 'bsd2'], default='mit',
                             help='License type to apply (default: mit)')
         args = parser.parse_args()
         license_type = args.license
