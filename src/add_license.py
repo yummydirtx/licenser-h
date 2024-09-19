@@ -1,16 +1,6 @@
 import os
 import sys
 
-# Define the license text for the LICENSE file
-license_text_full = """
-MIT License
-
-© [Year] [Your Name]
-
-Permission is hereby granted, free of charge, to any person obtaining a copy...
-[rest of the MIT License text]
-""".strip()
-
 # Mapping of file extensions to their comment styles
 comment_styles = {
     '.py': '#',           # Python
@@ -62,7 +52,7 @@ def process_project_directory(project_path, license_header):
                 comment_style = comment_styles[ext]
                 add_license_header(file_path, comment_style, license_lines)
 
-def create_license_file(project_path):
+def create_license_file(project_path, license_text_full):
     license_file_path = os.path.join(project_path, 'LICENSE')
     with open(license_file_path, 'w', encoding='utf-8') as f:
         f.write(license_text_full)
