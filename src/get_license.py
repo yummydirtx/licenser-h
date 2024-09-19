@@ -1,5 +1,5 @@
 from datetime import datetime
-from full_licenses import licenses_text_full, license_headers
+from .full_licenses import licenses_text_full, license_headers
 
 
 def get_license_texts(license_type, project_name, author_name):
