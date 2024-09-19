@@ -15,3 +15,12 @@ def choose_license():
     ).execute()
 
     return license_type
+
+def get_user_info():
+    questions = [
+        inquirer.text("project_name", message="Enter the project name:"),
+        inquirer.text("author_name", message="Enter the author name:"),
+    ]
+
+    answers = inquirer.prompt(questions)
+    return answers["project_name"], answers["author_name"]
