@@ -19,6 +19,8 @@
 
 import os
 import sys
+from detect_license import detect_license
+from get_license import get_license_header_patterns
 
 # Mapping of file extensions to their comment styles
 comment_styles = {
@@ -39,13 +41,21 @@ comment_styles = {
     # Add more extensions as needed
 }
 
-def add_license_header(file_path, comment_style, license_lines):
+def add_license_header(file_path, comment_style, license_lines, license_header_patterns):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.readlines()
 
-    if any(license_lines[0] in line for line in content[:len(license_lines) + 5]):
-        return
+    # Check if any supported license header is already present
+    result = detect_license(file_path, license_header_patterns, comment_style)
+    if result:
+        start_line, end_line = result
+        # Remove the existing license lines
+        content = content[:start_line] + content[end_line + 1:]
+        insert_position = start_line
+    else:
+        insert_position = 0  # Insert at the top if no existing license
 
+    # Create the new license header
     if comment_style in ['#', '//']:
         license_header = [f"{comment_style} {line}\n" for line in license_lines]
     elif comment_style == '/*|*/':
@@ -56,11 +66,15 @@ def add_license_header(file_path, comment_style, license_lines):
         print(f"Unknown comment style for {file_path}")
         return
 
+    # Insert the new license header
+    content = content[:insert_position] + license_header + ['\n'] + content[insert_position:]
+
     with open(file_path, 'w', encoding='utf-8') as f:
-        f.writelines(license_header + ['\n'] + content)
+        f.writelines(content)
 
 def process_project_directory(project_path, license_header):
     license_lines = license_header.strip().split('\n')
+    license_header_patterns = get_license_header_patterns()
 
     for root, dirs, files in os.walk(project_path):
         for file in files:
@@ -69,7 +83,8 @@ def process_project_directory(project_path, license_header):
 
             if ext in comment_styles:
                 comment_style = comment_styles[ext]
-                add_license_header(file_path, comment_style, license_lines)
+                add_license_header(file_path, comment_style, license_lines, license_header_patterns)
+
 
 def create_license_file(project_path, license_text_full):
     license_file_path = os.path.join(project_path, 'LICENSE')
