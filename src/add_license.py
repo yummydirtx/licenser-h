@@ -19,8 +19,8 @@
 
 import os
 import sys
-from detect_license import detect_license
-from get_license import get_license_header_patterns
+from .detect_license import detect_license
+from .get_license import get_license_header_patterns
 
 # Mapping of file extensions to their comment styles
 comment_styles = {

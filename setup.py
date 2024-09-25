@@ -20,8 +20,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='licenser',
-    version='0.1',
+    name='licenser-h',
+    version='0.2',
     packages=find_packages(),
     install_requires=[
         'argparse',
@@ -29,7 +29,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'licenser = src.main:main',
+            'licenser-h = src.main:main',
         ],
     },
 )
