@@ -1,5 +1,10 @@
 # licenser-h
 
+![PyPI - Version](https://img.shields.io/pypi/v/licenser-h)
+![PyPI - License](https://img.shields.io/pypi/l/licenser-h)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/licenser-h)
+
+
 A Python tool to add or update license headers in your project files.
 
 ## Description 
