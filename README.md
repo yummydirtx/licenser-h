@@ -72,13 +72,13 @@ licenser-h
 
 
 ```mathematica
-Enter the project name: MyAwesomeProject
-Enter the author name: Jane Doe
 Select a license:
   ❯ MIT License
     Apache License 2.0
     GNU General Public License v3.0
     BSD 2-Clause Simplified License
+Enter the project name: MyAwesomeProject
+Enter the author name: Jane Doe
 ```
 
 After providing the necessary information, licenser-h will:
