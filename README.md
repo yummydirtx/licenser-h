@@ -3,6 +3,7 @@
 ![PyPI - Version](https://img.shields.io/pypi/v/licenser-h)
 ![PyPI - License](https://img.shields.io/pypi/l/licenser-h)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/licenser-h)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fyummydirtx%2Flicenser-h.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fyummydirtx%2Flicenser-h?ref=badge_shield)
 
 
 A Python tool to add or update license headers in your project files.
@@ -32,6 +33,9 @@ licenser-h is a command-line utility designed to automate the process of adding 
  
 - **Customizable Placeholders** : 
   - Inserts custom values representing the current year, project name, and author name.
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fyummydirtx%2Flicenser-h.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fyummydirtx%2Flicenser-h?ref=badge_large)
 
 ## Installation 
 
