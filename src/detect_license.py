@@ -110,6 +110,18 @@ def detect_license(file_path, license_header_patterns, comment_style):
             # Found a matching license header
             start_line = 0  # Since we started from the top
             end_line = end_line_index
+
+            # Include all consecutive empty lines after the license block
+            next_line_index = end_line_index + 1
+            while next_line_index < len(content):
+                next_line = content[next_line_index]
+                if not next_line.strip():
+                    # Next line is empty; include it
+                    end_line = next_line_index
+                    next_line_index += 1
+                else:
+                    break  # Non-empty line encountered
+
             return start_line, end_line
 
     return None
