@@ -20,6 +20,8 @@ licenser-h is a command-line utility designed to automate the process of adding 
 
   - GNU General Public License v3.0
 
+  - GNU Affero General Public License v3
+
   - BSD 2-Clause Simplified License
  
 - **Multi-language Support** :
@@ -76,6 +78,7 @@ Select a license:
   ❯ MIT License
     Apache License 2.0
     GNU General Public License v3.0
+    GNU Affero General Public License v3
     BSD 2-Clause Simplified License
 Enter the project name: MyAwesomeProject
 Enter the author name: Jane Doe

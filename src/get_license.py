@@ -39,7 +39,7 @@ def get_license_texts(license_type, project_name, author_name):
 
 def get_license_header_patterns():
     # List of supported license keys
-    supported_licenses = ['mit', 'apache2', 'gpl3', 'bsd2']
+    supported_licenses = ['mit', 'apache2', 'gpl3', 'agpl3', 'bsd2']
 
     # Dictionary to hold license header regex patterns
     license_header_patterns = {}

@@ -20,7 +20,6 @@
 import sys
 from .add_license import process_project_directory, create_license_file
 import argparse
-from .choose_license import choose_license, get_user_info
 from .get_license import get_license_texts
 
 
@@ -33,10 +32,11 @@ def main():
     project_path = args.project_path
 
     if args.interactive:
+        from .choose_license import choose_license, get_user_info
         license_type = choose_license()
         project_name, author_name = get_user_info()
     else:
-        parser.add_argument('--license', '-l', choices=['mit', 'apache2', 'gpl3', 'bsd2'], default='mit',
+        parser.add_argument('--license', '-l', choices=['mit', 'apache2', 'gpl3', 'agpl3', 'bsd2'], default='mit',
                             help='License type to apply (default: mit)')
         parser.add_argument('--project_name', '-p', help='Project name')
         parser.add_argument('--author_name', '-a', help='Author name')

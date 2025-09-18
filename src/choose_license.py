@@ -24,6 +24,7 @@ def choose_license():
         {"name": "MIT License", "value": "mit"},
         {"name": "Apache License 2.0", "value": "apache2"},
         {"name": "GNU General Public License v3.0", "value": "gpl3"},
+        {"name": "GNU Affero General Public License v3", "value": "agpl3"},
         {"name": "BSD 2-Clause Simplified License", "value": "bsd2"},
     ]
 
